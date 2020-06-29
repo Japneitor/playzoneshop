@@ -15,6 +15,7 @@ class Juego(models.Model):
     descripcion = models.TextField()
     precio = models.PositiveIntegerField()
     categoria = models.CharField(choices=categoria, max_length=80, null=True)
+    existencia = models.PositiveIntegerField(null=True)
 
     def __str__(self):
         return self.nombre

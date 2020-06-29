@@ -1,5 +1,5 @@
 #form {
-    width: 250px;
+    width: 250px !important;
     margin: 0 auto;
     height: 50px;
   }
@@ -41,7 +41,7 @@
     float: right;
     padding-top: 15px;
     padding-right: 15px;
-    width: 70%;
+    width: 100%;
   }
   aside{
     float: left;

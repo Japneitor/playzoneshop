@@ -84,6 +84,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
+h5{
+  height: 50px;
+
+}
+
 p {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -4473,7 +4478,8 @@ tbody.collapse.show {
   margin-bottom: 0;
 }
 
-.card-text:last-child {
+.card-text{
+  height: 230px;
   margin-bottom: 0;
 }
 
@@ -5873,6 +5879,7 @@ button.close {
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
+  height: 600px;
 }
 
 .carousel-item.active,
