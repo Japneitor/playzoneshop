@@ -7,13 +7,8 @@
     <title>Play Zone Shop</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-
-
     <link rel="ico" type="image/png" href="{% static 'img/logo.png' %}">
 </head>
 <header>
@@ -33,265 +28,208 @@
         <li class="nav-item">
           <a class="nav-link" href="#"></a>
         </li>
-      </ul> 
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form> 
     </div>
   </nav>
-  
-  
 </header>
 <body style="background-color:#19273a;">
-  <main> 
-<section> 
-
-    <div class="container" style="background-color:#1e3049;"><br>
-      <h3 style="color: whitesmoke;">Juegos de Acción</h3>
-      <!-- INICIO DE PRODUCTOS ACCION-->
-      <div class="card-deck">
-        {% for juego in lista_juegos%}
-          {% if juego.categoria == 'Juegos de accion'%}
-            <div class="card">
-              <img src="{{juego.imagen.url}}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a href=""><h5 class="card-title">{{juego.nombre}}</h5></a>
-                <p class="card-text">{{juego.descripcion}}.</p>
-                <h3>${{juego.precio}}</h3><br>
-                <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/img/comandos.jpg" class="d-block w-100" alt="..." class="img-fluid">
       </div>
-      </div><br>
-      </div><br><!--FIN DEL PRODUCTO ACCION-->
+      <div class="carousel-item">
+        <img src="/static/img/fortnite.jpg" class="d-block w-100" alt="..." class="img-fluid">
+      </div>
+      <div class="carousel-item">
+        <img src="/static/img/fondo-de-pantalla-juegos-5.jpeg" class="d-block w-100" alt="..." class="img-fluid">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <section> 
+      <div class="container" style="background-color:#1e3049;"><br>
+        <h3 style="color: whitesmoke;">Juegos de acción</h3>
+        <!-- INICIO DE PRODUCTOS ACCION-->
+        <div class="card-deck">
+          {% for juego in lista_juegos%}
+            {% if juego.categoria == 'Juegos de accion'%}
+              <div class="card">
+                <img src="{{juego.imagen.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href=""><h5 class="card-title">{{juego.nombre}}</h5></a>
+                  <p class="card-text">{{juego.descripcion}}.</p>
+                  <h3>${{juego.precio}}</h3><br>
+                  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        </div><br>
+        <br><!--FIN DEL PRODUCTO ACCION-->
+        <center> <!--BANNER PUBLICIDAD-->
+          <img src="{% static 'img/banner_publicidad_2.jpg' %}" width="95%" alt=""><br><br>
+        </center>
+      <!-- INICIO DE PRODUCTOS SIMULACION-->
+      <div class="container" style="background-color:#1e3049;"><br>
+        <h3 style="color: whitesmoke;">Juegos de simulación</h3>
+        <!-- INICIO DE PRODUCTOS ACCION-->
+        <div class="card-deck">
+          {% for juego in lista_juegos%}
+            {% if juego.categoria == 'Juegos de simulacion'%}
+              <div class="card">
+                <img src="{{juego.imagen.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href=""><h5 class="card-title">{{juego.nombre}}</h5></a>
+                  <p class="card-text">{{juego.descripcion}}.</p>
+                  <h3>${{juego.precio}}</h3><br>
+                  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        </div><br><!--FIN DEL PRODUCTO SIMULACION-->
       <center> <!--BANNER PUBLICIDAD-->
-        <img src="{% static 'img/banner_publicidad_2.jpg' %}" width="95%" alt=""><br><br>
-      </center>
-    <!-- INICIO DE PRODUCTOS SIMULACION-->
-    <div class="container" style="background-color:#1e3049;"><br>
-      <h3 style="color: whitesmoke;">Juegos de Simulación</h3>
-      <div class="card-deck">
-        <div class="card">
-          <img src="img/unity_of_command_II.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href=""><h5 class="card-title">Unity of command II</h5></a>
-            <p class="card-text">es el nombre de una serie de videojuegos de Monolith Productions.</p>
-            <h3>$45.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/Sim 4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Sim 4</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <h3>$35.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/sim_city.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Sim City</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <h3>$45.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/silent_hunter_III.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Silent Hunter III</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <h3>$60.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-      </div><br>
-    </div><br><!--FIN DEL PRODUCTO SIMULACION-->
-    <center> <!--BANNER PUBLICIDAD-->
-    <img src="{% static 'img/banner_publicidad.jpg' %}" width="95%" alt=""><br><br>
-  </center>
-    <!-- INICIO DE PRODUCTOS DEPORTES-->
-    <div class="container" style="background-color: #1e3049;"><br>
-      <h3 style="color: whitesmoke;">Juegos de Deportes</h3>
-      <div class="card-deck">
-        <div class="card">
-          <img src="img/football_pes_2020.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href=""><h5 class="card-title">Footbal PES 2020</h5></a>
-            <p class="card-text">es el nombre de una serie de videojuegos de Monolith Productions.</p>
-            <h3>$35.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/super_mega_baseball_3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Super Mega Baseball 3</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <h3>$35.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/tony_hawks_pro_skater_2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Tony Hawk's Pro Skater 2</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <h3>$35.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-      </div><br>
-    </div><br><!--FIN DEL PRODUCTO DEPORTES-->
-
-    <!-- INICIO DE PRODUCTOS AVENTURA-->
-    <div class="container" style="background-color:#1e3049;"><br>
-      <h3 style="color: whitesmoke;">Juegos de Aventura</h3>
-      <div class="card-deck">
-        <div class="card">
-          <img src="img/ori.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href=""><h5 class="card-title">Ori and the Will of the Wisps</h5></a>
-            <p class="card-text">Ori and the Will of the Wisps es un videojuego del género aventura plataforma y Metroidvania.</p>
-            <h3>$40.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/mision.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#"><h5 class="card-title">Mission: It's Complicated</h5></a>
-            <p class="card-text">Es una novela visual basada en la narrativa en la que emparejas superhéroes súper increíbles para ir a misiones.</p>
-            <h3>$40.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/six_ages.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#"><h5 class="card-title">Six Ages: Ride Like the Wind</h5></a>
-            <p class="card-text">Lleva a tu clan a la leyenda o la oscuridad. Planifica tu estrategia y nunca te rindas ante las amenazas.</p>
-            <h3>$35.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-      </div><br>
-    </div><br><!--FIN DEL PRODUCTO AVENTURA-->
-    <center> <!--BANNER PUBLICIDAD-->
       <img src="{% static 'img/banner_publicidad.jpg' %}" width="95%" alt=""><br><br>
     </center>
-    <!-- INICIO DE PRODUCTOS PLATAFORMAS-->
-    <div class="container" style="background-color:#1e3049;"><br>
-      <h3 style="color: whitesmoke;">Juegos de Plataformas</h3>
-      <div class="card-deck">
-        <div class="card">
-          <img src="img/plataforma_Bloodstained.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href=""><h5 class="card-title">Bloodstained: Ritual of the Night</h5></a>
-            <p class="card-text">Es un videojuego del género de Metroidvania desarrollado por ArtPlay y publicado por 505 Games.</p>
-            <h3>$50.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
+      <!-- INICIO DE PRODUCTOS DEPORTES-->
+      <div class="container" style="background-color:#1e3049;"><br>
+        <h3 style="color: whitesmoke;">Juegos de deportes</h3>
+        <!-- INICIO DE PRODUCTOS ACCION-->
+        <div class="card-deck">
+          {% for juego in lista_juegos%}
+            {% if juego.categoria == 'Juegos de deportes'%}
+              <div class="card">
+                <img src="{{juego.imagen.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href=""><h5 class="card-title">{{juego.nombre}}</h5></a>
+                  <p class="card-text">{{juego.descripcion}}.</p>
+                  <h3>${{juego.precio}}</h3><br>
+                  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-        <div class="card">
-          <img src="img/plataforma_Yooka-Laylee .jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#"><h5 class="card-title">Yooka-Laylee and the Impossible Lair</h5></a>
-            <p class="card-text">Es un juego de plataformas de aventuras completamente nuevo de la mano de los creativos detrás de Donkey Kong Country.</p>
-            <h3>$50.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/plataforma_pedestrian.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="#"><h5 class="card-title">Six Ages: Ride Like the Wind</h5></a>
-            <p class="card-text">Ahora puedo ver las señales en mi sueño, siempre guiándome más cerca. ¿Esto realmente funcionará? ¿Casi hemos logrado lo imposible?</p>
-            <h3>$50.000</h3><br>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-          </div>
-        </div>
-      </div><br>
-    </div><br><!--FIN DEL PRODUCTO PLATAFORMAS-->
-    <center> <!--BANNER PUBLICIDAD-->
-      <img src="{% static 'img/banner_publicidad_3.jpg' %}" width="95%" alt=""><br><br>
-    </center>
+        </div><br><!--FIN DEL PRODUCTO DEPORTES-->
 
-<!-- INICIO DE PRODUCTOS PUZZLE-->
-<div class="container" style="background-color:#1e3049;"><br>
-  <h3 style="color: whitesmoke;">Juegos de Puzzle</h3>
-  <div class="card-deck">
-    <div class="card">
-      <img src="img/puzle_tetri.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <a href=""><h5 class="card-title">Tetris Effect</h5></a>
-        <p class="card-text">Es un videojuego de rompecabezas desarrollado por el estudio japonés Resonair y publicado por Enhance.</p>
-        <h3>$45.000</h3><br>
-        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="img/puzle_Unravel.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <a href="#"><h5 class="card-title">Unravel</h5></a>
-        <p class="card-text">Es un videojuego de rompecabezas desarrollado por la compañía Coldwood Interactive y publicado por Electronic Arts.</p>
-        <h3>$50.000</h3><br>
-        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="img/Filament.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <a href="#"><h5 class="card-title">Filament</h5></a>
-        <p class="card-text">Es un juego de puzles tranquilo, con una historia profunda y completamente narrado, en el que tendrás que resolver una serie de puzles</p>
-        <h3>$45.000</h3><br>
-        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
-      </div>
-    </div>
-  </div><br>
-</div><br><!--FIN DEL PRODUCTO PUZLE-->
+      <!-- INICIO DE PRODUCTOS AVENTURA-->
+      <div class="container" style="background-color:#1e3049;"><br>
+        <h3 style="color: whitesmoke;">Juegos de aventura</h3>
+        <!-- INICIO DE PRODUCTOS ACCION-->
+        <div class="card-deck">
+          {% for juego in lista_juegos%}
+            {% if juego.categoria == 'Juegos de aventura'%}
+              <div class="card">
+                <img src="{{juego.imagen.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href=""><h5 class="card-title">{{juego.nombre}}</h5></a>
+                  <p class="card-text">{{juego.descripcion}}.</p>
+                  <h3>${{juego.precio}}</h3><br>
+                  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        </div><br><!--FIN DEL PRODUCTO AVENTURA-->
+      <center> <!--BANNER PUBLICIDAD-->
+        <img src="{% static 'img/banner_publicidad.jpg' %}" width="95%" alt=""><br><br>
+      </center>
+      <!-- INICIO DE PRODUCTOS PLATAFORMAS-->
+      <div class="container" style="background-color:#1e3049;"><br>
+        <h3 style="color: whitesmoke;">Juegos de plataformas</h3>
+        <!-- INICIO DE PRODUCTOS ACCION-->
+        <div class="card-deck">
+          {% for juego in lista_juegos%}
+            {% if juego.categoria == 'Juegos de plataformas'%}
+              <div class="card">
+                <img src="{{juego.imagen.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href=""><h5 class="card-title">{{juego.nombre}}</h5></a>
+                  <p class="card-text">{{juego.descripcion}}.</p>
+                  <h3>${{juego.precio}}</h3><br>
+                  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        </div><br><!--FIN DEL PRODUCTO PLATAFORMAS-->
+      <center> <!--BANNER PUBLICIDAD-->
+        <img src="{% static 'img/banner_publicidad_3.jpg' %}" width="95%" alt=""><br><br>
+      </center>
 
-<footer>
-    <div class="container-fluid text-center text-md-left" style="background-color: #1E375A;" >
-      <div class="row">
-        <div class="col-md-6 mt-md-0 mt-3"><br>
-          <h5 class="text-uppercase font-weight-bold" style="color: whitesmoke;" >Proyecto TSP</h5>
-          <p style="color: whitesmoke;">Este proyecto es desarrollado en un ambiente academico, para la materia Proyecto Desarrollo de Software en equipo TSP,
-            en la Universidad Politecnico Gran Colombiano.
-          </p>
+  <!-- INICIO DE PRODUCTOS PUZZLE-->
+  <div class="container" style="background-color:#1e3049;"><br>
+    <h3 style="color: whitesmoke;">Juegos de puzzle</h3>
+    <!-- INICIO DE PRODUCTOS ACCION-->
+    <div class="card-deck">
+      {% for juego in lista_juegos%}
+        {% if juego.categoria == 'Juegos de puzzle'%}
+          <div class="card">
+            <img src="{{juego.imagen.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <a href=""><h5 class="card-title">{{juego.nombre}}</h5></a>
+              <p class="card-text">{{juego.descripcion}}.</p>
+              <h3>${{juego.precio}}</h3><br>
+              <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al Carrito</a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    </div><br><!--FIN DEL PRODUCTO PUZLE-->
+
+  <footer>
+      <div class="container-fluid text-center text-md-left" style="background-color: #1E375A;" >
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3"><br>
+            <h5 class="text-uppercase font-weight-bold" style="color: whitesmoke;" >Proyecto TSP</h5>
+            <p style="color: whitesmoke;">Este proyecto es desarrollado en un ambiente academico, para la materia Proyecto Desarrollo de Software en equipo TSP,
+              en la Universidad Politecnico Gran Colombiano.
+            </p>
+          </div>  
+          <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-6 mb-md-0 mb-3"> <br>
+              <h5 class="text-uppercase font-weight-bold" style="color: whitesmoke;">Integrantes</h5>
+            <p style="color: whitesmoke;">Uno</p>
+            <p style="color: whitesmoke;">Uno</p>
+            <p style="color: whitesmoke;">Uno</p>
+            <p style="color: whitesmoke;">Uno</p>
+            <p style="color: whitesmoke;">DOs</p>
+          </div>  
         </div>  
-        <hr class="clearfix w-100 d-md-none pb-3">
-          <div class="col-md-6 mb-md-0 mb-3"> <br>
-            <h5 class="text-uppercase font-weight-bold" style="color: whitesmoke;">Integrantes</h5>
-          <p style="color: whitesmoke;">Uno</p>
-          <p style="color: whitesmoke;">Uno</p>
-          <p style="color: whitesmoke;">Uno</p>
-          <p style="color: whitesmoke;">Uno</p>
-          <p style="color: whitesmoke;">DOs</p>
-        </div>  
-      </div>  
-    </div>
-  
-    <div class="footer-copyright text-center py-3" style="background-color: wheat;" >© 2020 Copyright - PlayZoneShop
-    </div>
+      </div>
+    
+      <div class="footer-copyright text-center py-3 text-light" style="background-color: #343a40;" >
+        <p>
+          © 2020 Copyright - PlayZoneShop
+        </p>
+      </div>
 
-  </div>
-</footer>
+    </div>
+  </footer>
 
   </section>
-<aside>
-    <div class="container">
-      <h3 style="color: white;">Buscar</h3>
-      <form class="form-inline">
-        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Buscar en la tienda"
-          aria-label="Search">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </form>
-    </div> 
-  </aside>
 
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
+
 </html>
 
